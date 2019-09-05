@@ -1,0 +1,212 @@
+@charset "UTF-8";
+
+//  省略文字n行
+@mixin ell($n) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: $n;
+  -o-text-overflow: ellipsis;
+}
+
+// 行高
+@mixin lh($height, $line_height) {
+  height: $height;
+  line-height: $line_height;
+}
+
+//  图片容器
+@mixin imgBox($img_width:100rpx, $img_height:100rpx) {
+  position: relative;
+  overflow: hidden;
+  width: $img_width;
+  height: $img_height;
+  background-position: top center;
+  -moz-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+// 全屏
+@mixin wfull($min_width, $height) {
+  margin: 0 auto;
+  min-width: $min_width;
+  width: 100%;
+  height: $height;
+}
+
+// 背景图
+@mixin bg($img, $size:cover, $position:center) {
+  background: url("../images/#{$img}.png") no-repeat $position;
+  -moz-background-size: $size;
+  background-size: $size;
+}
+
+// 动画过渡
+@mixin trans($time:.2s) {
+  -webkit-transition: all $time ease-in-out;
+  -moz-transition: all $time ease-in-out;
+  -ms-transition: all $time ease-in-out;
+  -o-transition: all $time ease-in-out;
+  transition: all $time ease-in-out;
+}
+
+// 宣传动画调用
+@mixin xz($deg:360) {
+  -webkit-transform: rotate($deg+deg);
+  -moz-transform: rotate($deg+deg);
+  -ms-transform: rotate($deg+deg);
+  -o-transform: rotate($deg+deg);
+  transform: rotate($deg+deg);
+}
+
+// 放大动画
+@mixin fd($scl) {
+  -webkit-transform: scale($scl);
+  -moz-transform: scale($scl);
+  -ms-transform: scale($scl);
+  -o-transform: scale($scl);
+  transform: scale($scl);
+}
+
+// 移动动画
+@mixin yd($s1:0,
+$s2:0) {
+  -webkit-transform: translate($s1, $s2);
+  -moz-transform: translate($s1, $s2);
+  -ms-transform: translate($s1, $s2);
+  -o-transform: translate($s1, $s2);
+  transform: translate($s1, $s2);
+}
+
+// 划过动画
+@mixin box($s1:box,
+$s2:.6s) {
+  animation: $s1 $s2;
+}
+
+// 经过变色
+@mixin aColor($icolor) {
+
+  &:hover,
+  &.active {
+    color: $icolor
+  }
+}
+
+// 图片变灰
+@mixin gray() {
+  -webkit-filter: grayscale(1);
+  filter: gray;
+  filter: grayscale(1);
+}
+
+// 图片变灰
+@mixin Nogray() {
+  -webkit-filter: grayscale(0);
+  filter: inherit;
+  filter: grayscale(0);
+}
+
+// 边线
+@mixin border($border-color) {
+  border: 1px solid $border-color;
+}
+
+@mixin bb($border-color) {
+  border-bottom: 1px solid $border-color;
+}
+
+@mixin bt($border-color) {
+  border-top: 1px solid $border-color;
+}
+
+// 垂直居中
+@mixin prc() {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+// 文本溢出
+@mixin text() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//箭头 (方向，大小，颜色)
+@mixin arrow($direction,
+$size,
+$color) {
+  width: 0;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  border-width: $size;
+  cursor: pointer;
+
+  @if $direction==top {
+    border-style: dashed dashed solid dashed;
+    border-color: transparent transparent $color transparent;
+    border-top: none;
+  }
+
+  @else if $direction==bottom {
+    border-style: solid dashed dashed dashed;
+    border-color: $color transparent transparent transparent;
+    border-bottom: none;
+  }
+
+  @else if $direction==right {
+    border-style: dashed dashed dashed solid;
+    border-color: transparent transparent transparent $color;
+    border-right: none;
+  }
+
+  @else if $direction==left {
+    border-style: dashed solid dashed dashed;
+    border-color: transparent $color transparent transparent;
+    border-left: none;
+  }
+}
+
+//空心箭头 (方向，大小，颜色)
+@mixin air_arrow($direction:right,
+$size:10px,
+$color:#999) {
+  width: $size;
+  height: $size;
+  border-top: 2rpx solid $color;
+  border-left: 2rpx solid $color;
+  transform: rotate(135deg);
+  cursor: pointer;
+  overflow: hidden;
+  vertical-align: middle;
+
+  @if $direction==top {
+    transform: rotate(135deg);
+
+  }
+
+  @else if $direction==bottom {
+    transform: rotate(135deg);
+
+  }
+
+  @else if $direction==right {
+    transform: rotate(135deg);
+
+  }
+
+  @else if $direction==left {
+    transform: rotate(135deg);
+
+  }
+}

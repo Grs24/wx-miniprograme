@@ -1,0 +1,9 @@
+<!--头部导航-->
+<mp-navigation-bar loading="{{navigation.loading}}" show="{{navigation.show}}" animated="{{navigation.animated}}" color="{{navigation.color}}" background="{{navigation.background}}" title="{{navigation.title}}" back="{{navigation.back}}" ext-class="navigation"></mp-navigation-bar>
+
+<view class="content">
+  content
+</view>
+
+<!--底部导航-->
+<mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{tabbar.list}}" bindchange="tabChange"></mp-tabbar>

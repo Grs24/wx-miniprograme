@@ -1,0 +1,29 @@
+{
+  "name": "wx-miniprograme",
+  "version": "1.0.0",
+  "description": "quickly to start a project of wx-miniprograme",
+  "main": "app.js",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaoRush/wx-miniprograme.git"
+  },
+  "keywords": [
+    "wx-miniprograme"
+  ],
+  "author": "Grs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GaoRush/wx-miniprograme/issues"
+  },
+  "homepage": "https://github.com/GaoRush/wx-miniprograme#readme"
+}
